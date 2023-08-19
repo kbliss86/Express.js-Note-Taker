@@ -1,4 +1,4 @@
-//referenced from course work - module 24
+//pull in required files
 const notes = require('express').Router();
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
 const uuid = require('../helpers/uuid');
@@ -9,6 +9,7 @@ notes.get('/', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
+//get route for pulling in details about specific note when its clicked on
 notes.get('/:id', (req, res) => {
     console.info(`${req.method} request for single note recieved`);
     const noteDetail = (req.params.id);
@@ -27,6 +28,7 @@ notes.get('/:id', (req, res) => {
     });
 });
 
+//post route for adding in new notes
 notes.post('/', (req, res) => {
     console.log(req.body);
 const { title, text } = req.body;
@@ -37,7 +39,7 @@ if (req.body) {
         text,
         id: uuid(),
     };
-
+    //add it to db.json file
     readAndAppend(newNote, 'db/db.json');
     res.json(`Note Added Sucessfully`);
     }  else {

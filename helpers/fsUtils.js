@@ -1,4 +1,4 @@
-//copied from module 24
+//pull in required files for file write/creation
 const fs = require('fs');
 const util = require('util');
 

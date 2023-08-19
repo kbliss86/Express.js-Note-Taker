@@ -1,5 +1,7 @@
+// pull in express module 
 const express = require('express');
 
+//pull in notes.js file
 const notesRouter = require('./notes.js');
 
 const app = express();
