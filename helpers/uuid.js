@@ -1,4 +1,4 @@
-//copied from module 24
+// module for creating unique id for JSON data
 // Immediately export a function that generates a string of random numbers and letters
 module.exports = () =>
   Math.floor((1 + Math.random()) * 0x10000)
