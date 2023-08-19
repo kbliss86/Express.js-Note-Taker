@@ -11,10 +11,10 @@ notes.get('/', (req, res) => {
 
 notes.get('/:id', (req, res) => {
     console.info(`${req.method} request for single note recieved`);
-    const noteDetail = (req.params.uid);
+    const noteDetail = (req.params.id);
     readFromFile('./db/db.json').then((data) => {
         let noteDetail = res.json(JSON.parse(data));
-        const note = noteDetail.find((note) => note.uid === noteUid);
+        const note = noteDetail.find((note) => note.id === noteId);
         if (note) {
             res.json(note);
         } else {
@@ -35,7 +35,7 @@ if (req.body) {
     const newNote = {
         title,
         text,
-        uid: uuid(),
+        id: uuid(),
     };
 
     readAndAppend(newNote, 'db/db.json');

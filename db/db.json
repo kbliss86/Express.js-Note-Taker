@@ -1,12 +1,7 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text",
-        "uid": "123"
-    },
-    {
-        "title": "TEst2",
-        "text": "This is a test\n",
-        "uid": "ee55"
+        "title": "Walk Dog",
+        "text": "Take the dog for a walk",
+        "ui": "123"
     }
 ]
